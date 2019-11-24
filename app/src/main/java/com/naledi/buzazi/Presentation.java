@@ -62,7 +62,7 @@ public class Presentation extends  AhoyOnboarderActivity {
     public void onFinishButtonPressed() {
         //Toast.makeText(this, "Finish Pressed", Toast.LENGTH_SHORT).show();
         //MainActivity()
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Splash.class);
         startActivity(intent);
         finish();
     }
