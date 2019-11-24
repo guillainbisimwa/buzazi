@@ -13,6 +13,6 @@ Pour faire le choix du nombre souhaité d’enfants et  déterminer quel sera l�
 ## Screenshot
 <p align="center">
 
-<img src="https://github.com/guillainbisimwa/Ohada-Express-CTC/blob/master/db/oe.png" data-canonical-src="https://github.com/guillainbisimwa/Ohada-Express-CTC/blob/master/db/oe.png" style="max-width:100%;">
+<img src="" data-canonical-src="" style="max-width:100%;">
 
 </p>
