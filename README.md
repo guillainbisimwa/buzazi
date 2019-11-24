@@ -1,3 +1,5 @@
+# <img src="https://github.com/guillainbisimwa/buzazi/blob/master/app/src/main/res/drawable/logo3.png" width="160px" align="center" alt="hpnk"> BUZAZI
+
 # buzazi
 Une app Android pour tout savoir sur la Santé de la reproduction et Planification familiale.
 
