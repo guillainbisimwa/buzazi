@@ -1,5 +1,6 @@
 package com.naledi.buzazi;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.webkit.WebView;
@@ -17,5 +18,15 @@ class MyWebViewClient extends WebViewClient {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         view.getContext().startActivity(intent);
         return true;
+    }
+    //Dialog loadingDialog = new Dialog(this);
+
+
+    @Override
+    public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
+        System.out.println("----- Erreur code: " + errorCode);
+        System.out.println("----- Erreur url: " + description);
+
+
     }
 }
