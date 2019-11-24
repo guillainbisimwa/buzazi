@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">buzazi</string>
     <string name="action_settings">Settings</string>
+
+    <!-- Preference for app token -->
+    <string name="application_key" translatable="false">app</string>
+    <string name="app_id" translatable="false">appId</string>
+    <string name="install_app_id" translatable="false">Install app id</string>
 </resources>

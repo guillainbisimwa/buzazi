@@ -1,6 +1,8 @@
 package com.naledi.buzazi;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,6 +23,15 @@ public class Presentation extends  AhoyOnboarderActivity {
 
         super.onCreate(savedInstanceState);
 
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences(getResources().getString(R.string.application_key),
+                Context.MODE_PRIVATE);
+        boolean installed = prefs.getBoolean(getResources().getString(R.string.install_app_id), false);
+        boolean connected = prefs.getBoolean(getResources().getString(R.string.app_id), true);
+
+        if (installed) {
+            finish();
+            startActivity(new Intent(getApplicationContext(), Splash.class));
+        }
         AhoyOnboarderCard ahoyOnboarderCard1 = new AhoyOnboarderCard("Prévention", "Prévenir les risques sanitaires liés à la grossesse chez les femmes.", R.drawable.bun);
         AhoyOnboarderCard ahoyOnboarderCard2 = new AhoyOnboarderCard("Reduction", "Réduire la mortalité infantile.", R.drawable.btrois);
         AhoyOnboarderCard ahoyOnboarderCard3 = new AhoyOnboarderCard("Contribution", "Contribuer à prévenir le VIH/sida.", R.drawable.bdeux);
@@ -60,6 +71,13 @@ public class Presentation extends  AhoyOnboarderActivity {
 
     @Override
     public void onFinishButtonPressed() {
+
+        //nOT ALLOW INTALLATION AFTER REACH THIS ui FOR A FIRST TIME
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences(getResources().getString(R.string.application_key),
+                Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor_install = preferences.edit();
+        editor_install.putBoolean(getResources().getString(R.string.install_app_id), true);
+        editor_install.apply();
         //Toast.makeText(this, "Finish Pressed", Toast.LENGTH_SHORT).show();
         //MainActivity()
         Intent intent = new Intent(this, Splash.class);
